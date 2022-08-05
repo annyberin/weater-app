@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="src/styles.css" />
     <title>Weather app</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
@@ -14,31 +14,42 @@
     />
   </head>
   <body>
-    <h1>Weather forecast</h1>
-    <ul>
-      <li>Friday 05:00</li>
-      <li>Clear</li>
-    </ul>
-    <div class="row">
-      <div class="col-6">
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/979/979585.png"
-          alt="Sunny"
-          width="70"
-        />
-        12 °C | °F
+    <div class="container">
+      <div class="weather-app-info">
+        <div class="weather-app">
+          <h1>Weather forecast</h1>
+          <ul>
+            <li>Friday 05:00</li>
+            <li>Clear</li>
+          </ul>
+          <div class="row">
+            <div class="col-6">
+              <div class="temp">
+                <img
+                  class="main-weather-img"
+                  src="https://cdn-icons-png.flaticon.com/512/979/979585.png"
+                  alt="Sunny"
+                  width="70"
+                />
+                <strong>12°</strong> <small>C | F</small>
+              </div>
+            </div>
+            <div class="col-6">
+              <ul>
+                <li>Presipitation: 0%</li>
+                <li>Humidity: 10%</li>
+                <li>Wind: 2km/h</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <small class="open-sourse"
+          ><a href="https://github.com/annyberin/weater-app"
+            >Open-source code</a
+          >
+          by Anna Bondarenko</small
+        >
       </div>
-      <div class="col-6">
-        <ul>
-          <li>Presipitation: 0%</li>
-          <li>Humidity: 10%</li>
-          <li>Wind: 2km/h</li>
-        </ul>
-      </div>
-      <small
-        ><a href="https://github.com/annyberin/weater-app">Open-source code</a>
-        by Anna Bondarenko</small
-      >
     </div>
 
     <script src="src/script.js"></script>

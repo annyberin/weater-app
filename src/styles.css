@@ -1,0 +1,51 @@
+body {
+  background: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/042/841/original/stephen-leonardi-UpLc15XrHBo-unsplash.jpg?1659740563)
+      50% no-repeat,
+    linear-gradient(#878787, #ebebeb);
+  background-size: cover;
+}
+h1 {
+  border: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+.weather-app {
+  max-width: 700px;
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid #000;
+  border-radius: 30px;
+  background: rgba(0, 0, 0, 0.25);
+  color: #fff;
+}
+
+ul {
+  list-style: none;
+}
+.weather-app-info small {
+  margin: 15px;
+}
+
+.temp strong {
+  font-size: 60px;
+}
+
+.temp small {
+  position: relative;
+  left: -33px;
+  top: -2px;
+}
+
+.main-weather-img {
+  position: relative;
+  top: -15px;
+}
+
+.open-sourse {
+  color: #fff;
+  opacity: 0.9;
+}
