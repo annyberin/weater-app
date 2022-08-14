@@ -36,6 +36,12 @@ function showtemperature(response) {
   windSpeedElement.innerHTML = Math.round(response.data.wind.speed);
   let dateElement = document.querySelector("#date");
   dateElement.innerHTML = currentDate(response.data.dt * 1000);
+  let imgElement = document.querySelector("#weaterImg");
+  imgElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  imgElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 let apiKey = "3e7e8fd8cf76af676ed5110468b54fe1";
