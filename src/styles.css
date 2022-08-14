@@ -36,7 +36,7 @@ ul {
 
 .temp small {
   position: relative;
-  left: -33px;
+  left: -19px;
   top: -2px;
 }
 
@@ -48,4 +48,8 @@ ul {
 .open-sourse {
   color: #fff;
   opacity: 0.9;
+}
+
+#weather-description {
+  text-transform: capitalize;
 }
