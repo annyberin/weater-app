@@ -50,6 +50,6 @@ ul {
   opacity: 0.9;
 }
 
-#weather-description {
+li::first-letter {
   text-transform: capitalize;
 }
