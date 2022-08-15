@@ -53,3 +53,12 @@ ul {
 li::first-letter {
   text-transform: capitalize;
 }
+
+.temp .active {
+  color: #fff;
+  cursor: default;
+}
+
+.temp .active:hover {
+  text-decoration: none;
+}
