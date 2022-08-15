@@ -44,8 +44,17 @@ function showtemperature(response) {
   imgElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-let apiKey = "3e7e8fd8cf76af676ed5110468b54fe1";
-let city = "Alta";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+function search(city) {
+  let apiKey = "3e7e8fd8cf76af676ed5110468b54fe1";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showtemperature);
+}
 
-axios.get(apiUrl).then(showtemperature);
+function searchCity(event) {
+  event.preventDefault();
+  let searchCityElement = document.querySelector("#city-input");
+  search(searchCityElement.value);
+}
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", searchCity);
