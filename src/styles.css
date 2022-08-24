@@ -10,7 +10,7 @@ h1 {
   box-sizing: border-box;
   font: inherit;
   margin: 0;
-  padding: 0;
+  padding: 5px 5px 10px 0px;
   vertical-align: baseline;
 }
 .weather-app {
@@ -31,7 +31,7 @@ ul {
 }
 
 .temp strong {
-  font-size: 60px;
+  font-size: 50px;
 }
 
 .temp small {
@@ -61,4 +61,14 @@ li::first-letter {
 
 .temp .active:hover {
   text-decoration: none;
+}
+
+.weather-forecast {
+  text-align: center;
+  font-size: 13px;
+}
+
+#city {
+  font-size: 30px;
+  font-weight: bold;
 }
