@@ -21,7 +21,8 @@ function currentDate(handleDate) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   let days = [
@@ -56,6 +57,13 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "3e7e8fd8cf76af676ed5110468b54fe1";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function showtemperature(response) {
   console.log(response);
   console.log(response.data.main.temp);
@@ -82,6 +90,8 @@ function showtemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   imgElement.setAttribute("alt", response.data.weather[0].description);
+  //handle getting each day weather data
+  getForecast(response.data.coord);
 }
 
 function search(city) {
@@ -130,4 +140,3 @@ let celsiusElement = document.querySelector("#celsius");
 celsiusElement.addEventListener("click", displayCelsiusTemperature);
 
 search("Kiev");
-displayForecast();
