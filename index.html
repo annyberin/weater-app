@@ -21,7 +21,7 @@
           <h1>Weather forecast</h1>
           <form id="search-form" class="mb-3">
             <div class="row">
-              <div class="col-9">
+              <div class="col-10">
                 <input
                   type="search"
                   placeholder="Type a city..."
@@ -30,7 +30,7 @@
                   id="city-input"
                 />
               </div>
-              <div class="col-3">
+              <div class="col-2">
                 <input type="submit" value="Search" class="btn btn-primary" />
               </div>
             </div>
@@ -51,17 +51,13 @@
                   width="70"
                 />
                 <strong id="temperature"></strong>
-                <small id="units">
-                  <a href="#" id="celsius" class="active">°C</a> |
-                  <a href="#" id="fahrenheit">°F</a>
-                </small>
+                <small id="units">°C </small>
               </div>
             </div>
-            <div class="col-6">
+            <div id="infoBlock" class="col-6">
               <ul>
-                <li>Presipitation: <span id="presipitation">0</span>%</li>
                 <li>Humidity: <span id="humidity">10</span>%</li>
-                <li>Wind: <span id="windSpped">2</span>km/h</li>
+                <li>Wind: <span id="windSpped">2</span>m/h</li>
               </ul>
             </div>
           </div>

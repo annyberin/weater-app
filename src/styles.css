@@ -26,6 +26,10 @@ h1 {
 ul {
   list-style: none;
 }
+#infoBlock {
+  margin-top: 15px;
+}
+
 .weather-app-info small {
   margin: 15px;
 }

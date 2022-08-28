@@ -24,7 +24,15 @@ function currentDate(handleDate) {
 function formatDay(daystemp) {
   let date = new Date(daystemp * 1000);
   let day = date.getDay();
-  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
 
   return days[day];
 }
@@ -40,7 +48,7 @@ function displayForecast(response) {
     if (index < 7) {
       forecastHTML =
         forecastHTML +
-        `         <div class="col-2">
+        `         <div class="col-2" style="width: 14%">
                 <div class="weather-forecast-date">${formatDay(
                   forecastEachDay.dt
                 )}</div>
@@ -122,33 +130,5 @@ function searchCity(event) {
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
-
-function displayFahrenheitTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  // remove the active class
-  celsiusElement.classList.remove("active");
-  // add the active class
-  fahrenheitElement.classList.add("active");
-  let fahrenheitTemperature = (celsiusTemperature + 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-}
-
-function displayCelsiusTemperature(event) {
-  event.preventDefault();
-  // again
-  fahrenheitElement.classList.remove("active");
-  celsiusElement.classList.add("active");
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-}
-
-let celsiusTemperature = null;
-
-let fahrenheitElement = document.querySelector("#fahrenheit");
-fahrenheitElement.addEventListener("click", displayFahrenheitTemperature);
-
-let celsiusElement = document.querySelector("#celsius");
-celsiusElement.addEventListener("click", displayCelsiusTemperature);
 
 search("Kiev");
