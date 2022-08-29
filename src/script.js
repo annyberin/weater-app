@@ -131,4 +131,21 @@ function searchCity(event) {
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
 
-search("Kiev");
+function showPositon(position) {
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let apiKey = "3e7e8fd8cf76af676ed5110468b54fe1";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(handleShowCurrentTemperature);
+}
+
+function handleShowCurrentTemperature(response) {
+  let city = response.data.name;
+  let showCurrentCity = document.getElementById("city");
+  showCurrentCity.innerHTML = `${city}`;
+  search(city);
+}
+
+navigator.geolocation.getCurrentPosition(showPositon, function (e) {
+  console.log(e);
+});
